@@ -1,0 +1,20 @@
+meta {
+  name: Tripulaciones - Obtener Todas
+  type: http
+  seq: 3
+}
+
+get {
+  url: http://localhost:8080/v1/tripulaciones
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJjb2J5IiwiaWF0IjoxNzcwMTQ1NDMwLCJleHAiOjE3NzAyMzE4MzB9._KsnSNRva7sHO8Xcx6KX5kFPHxsk78oZB08daBZNpEWgfQC15w1e1jhr4lVtF-50
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
