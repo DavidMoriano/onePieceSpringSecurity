@@ -1,0 +1,83 @@
+/* One Piece Theme CSS */
+
+.onepiece-theme {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.marine-header {
+	background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+	border-radius: 15px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+	border: 3px solid #ffd700;
+}
+
+.pirate-card {
+	border-radius: 15px;
+}
+
+
+.form-control:focus {
+	border-color: #ffd700;
+	box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25);
+}
+
+.table-pirate {
+	background: white;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.table-pirate thead {
+	background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+	color: white;
+}
+
+.table-pirate tbody tr:hover {
+	background-color: #f8f9fa;
+	transform: scale(1.01);
+	transition: all 0.2s ease;
+}
+
+.alert-pirate {
+	border-left: 5px solid #d32f2f;
+	background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+	border-radius: 10px;
+}
+
+.alert-marine {
+	border-left: 5px solid #1976d2;
+	background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+	border-radius: 10px;
+}
+
+.card-header-pirate {
+	background: grey;
+	color: white;
+	font-weight: bold;
+	border-radius: 10px 10px 0 0 !important;
+}
+
+.navbar-dark {
+	background: linear-gradient(135deg, #0f2027 0%, #203a43 100%) !important;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.form-label {
+	font-weight: 600;
+	color: #2c3e50;
+}
+
+.wanted-poster {
+	border: 5px solid #8b4513;
+	background: #f4e4c1;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* un blanco translúcido elegante */
+    border-radius: 6px;
+}

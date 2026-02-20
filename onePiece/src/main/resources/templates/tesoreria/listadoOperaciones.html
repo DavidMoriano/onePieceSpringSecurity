@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tesorería Marina</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/onepiece.css}">
+</head>
+
+<body class="onepiece-theme">
+    <div class="container-fluid">
+        <div th:replace="~{menu :: menu}"></div>
+
+        <h2 class="display-5 fw-bold text-center">Registro de Operaciones - Tesorería Marina</h2>
+
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <!-- Resultados -->
+                <div th:if="${lista == null or lista.isEmpty()}" class="alert alert-warning text-center" role="alert">
+                    <h5>No hay operaciones registradas en la tesorería</h5>
+                </div>
+
+                <div th:if="${lista != null and !lista.isEmpty()}" class="card shadow-lg border-0 pirate-card">
+                    <div class="card-header card-header-pirate">
+                        <h4 class="mb-0">Operaciones Registradas: <span th:text="${lista.size()}"></span></h4>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-pirate table-hover mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Tipo de Operación</th>
+                                        <th>Cantidad (Berries)</th>
+                                        <th>Fecha y Hora</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:each="operacion : ${lista}">
+                                        <td th:text="${operacion.id}"></td>
+                                        <td><strong th:text="${operacion.tipoOperacion}"></strong></td>
+                                        <td>
+                                            <span th:if="${operacion.cantidad > 0}" class="badge bg-success"
+                                                th:text="${#numbers.formatInteger(operacion.cantidad, 0, 'COMMA')} + ' ฿'"></span>
+                                            <span th:if="${operacion.cantidad < 0}" class="badge bg-danger"
+                                                th:text="${#numbers.formatInteger(operacion.cantidad, 0, 'COMMA')} + ' ฿'"></span>
+                                            <span th:if="${operacion.cantidad == 0}" class="badge bg-secondary">0
+                                                ฿</span>
+                                        </td>
+                                        <td
+                                            th:text="${#temporals.format(operacion.fechaOperacion, 'dd/MM/yyyy HH:mm:ss')}">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <a th:href="@{/}" class="btn btn-secondary btn-lg">Volver al Inicio</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
